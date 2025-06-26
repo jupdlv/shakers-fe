@@ -3,7 +3,6 @@ import { Box, Chip, Typography, Stack } from "@mui/material";
 type FilterTagsProps = {
   filters: { label: string }[];
 };
-
 export default function FilterTags({ filters }: FilterTagsProps) {
   return (
     <Box sx={{ backgroundColor: "#f5fafa", p: 2, borderRadius: 2, mb: 3 }}>
