@@ -1,5 +1,6 @@
-import { Skill } from "@/domain/models/skills"
-import { Specialties } from "@/domain/models/specialities"
+import { Skill } from "@/app/shared/models/skills"
+import { Specialties } from "@/app/shared/models/specialities"
+
 
 export class Position {
     id: Number

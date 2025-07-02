@@ -1,4 +1,5 @@
-import { Industry } from "@/domain/models/industry"
+import { Industry } from "@/app/shared/models/industry"
+
 
 export class Organization {
     id: number

@@ -1,8 +1,8 @@
 export class Skill {
     id: Number
-    name: String | undefined
+    name: String 
 
-    constructor(id: Number, name: String | undefined) {
+    constructor(id: Number, name: String) {
         this.id = id
         this.name = name
     }

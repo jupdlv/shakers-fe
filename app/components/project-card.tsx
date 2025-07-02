@@ -1,18 +1,24 @@
+import { Budget } from "@/app/shared/models/budget";
 import { Project } from "@/app/shared/models/project";
 import {
-  Card,
-  CardContent,
-  CardActions,
-  Chip,
-  Typography,
-  Box,
   Avatar,
+  Box,
   Button,
+  Card,
+  CardActions,
+  CardContent,
+  Chip,
   Stack,
+  Typography,
 } from "@mui/material";
 
 
+function parserBudget(budget: Budget): string{
+  return budget?.hourFrom ? `${budget.hourFrom} - ${budget.hourTo} €/h` : `${budget.total} €`
+}
+
 export default function ProjectCard(project: Project) {
+  
   return (
     <Card variant="outlined" sx={{ mb: 2 }}>
       <CardContent sx={{ display: "flex", gap: 2 }}>
@@ -20,11 +26,11 @@ export default function ProjectCard(project: Project) {
         <Box>
           <Typography variant="h6">{project.title}</Typography>
           <Typography variant="body2" color="text.secondary">
-            {project.budget.total} • <b>{project.budget.total}</b>
+            {project.category.name} • <b> € {parserBudget(project.budget)}</b>
           </Typography>
           <Stack direction="row" spacing={1} mt={1} flexWrap="wrap">
-            {project.positions.map((tag) => (
-              <Chip label={tag.title} size="small" />
+            {project.positions.map((tag, index) => (
+              <Chip key={index} label={tag.title} size="small" />
             ))}
           </Stack>
         </Box>
